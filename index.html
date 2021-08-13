@@ -150,6 +150,7 @@
                         <li>Code sharing</li>
                         <li>Standardised deployments</li>
                         <li>Versioning</li>
+                        <li>Development experience</li>
                     </ul>
                 </section>
 
@@ -181,13 +182,16 @@
                     <ul>
                         <li>Single pipeline for all apps</li>
                         <li>
-                            <pre><code
+                            <pre class="pre"><code
                                 class="bash"
                                 data-trim
                                 data-line-numbers
                             >
                             nx affected:apps
                             </code></pre>
+                        </li>
+                        <li>
+                            Unit & Shallow integration tests built into pipeline
                         </li>
                     </ul>
                 </section>
@@ -199,6 +203,25 @@
                         <li>Keep all apps in sync</li>
                         <li>Less risk of unexpected breaking changes</li>
                         <li>No sprints wasted bumping library versions</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Development experience</h2>
+                    <ul>
+                        <li>Circa 2-3 days to deploy new app to QA</li>
+                        <li>
+                            <pre class="pre"><code
+                            class="bash"
+                            data-trim
+                            data-line-numbers
+                        >
+                        nx g @nrwl/next:app becky-quotes && yarn generate
+                        </code></pre>
+                        </li>
+                        <li>Easy to onboard new colleagues</li>
+                        <li>100% unit code coverage</li>
+                        <li>Automated dependency management</li>
                     </ul>
                 </section>
 
@@ -218,6 +241,13 @@
                         alt="Nx logo"
                         class="monolith-tech-img"
                     />
+                </section>
+
+                <section>
+                    <h2>Server / Client / Static</h2>
+                    <li>Deploy to docker container within K8 cluster</li>
+                    <li>Client side render?</li>
+                    <li>Static generation with caching?</li>
                 </section>
 
                 <section>
@@ -242,6 +272,11 @@
                             <a
                                 href="https://www.youtube.com/channel/UCF8luR7ORJTCwSNA9yZksCw"
                                 >Nrwl Youtube channel</a
+                            >
+                        </li>
+                        <li>
+                            <a href="https://github.com/renovatebot/renovate"
+                                >Renovate</a
                             >
                         </li>
                     </ul>
