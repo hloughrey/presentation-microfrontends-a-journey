@@ -1,0 +1,21 @@
+{
+  "name": "presentation-microfrontends-a-journey",
+  "version": "1.0.0",
+  "description": "Presentation on Purplebricks adoption of Micro-frontends",
+  "homepage": "https://presentation-microfrontends-a-journey.netlify.app",
+  "license": "MIT",
+  "scripts": {
+    "dev": "live-server"
+  },
+  "author": {
+    "name": "Hugh Loughrey",
+    "email": "hugh.loughrey@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hloughrey/presentation-microfrontends-a-journey.git"
+  },
+  "devDependencies": {
+    "live-server": "1.2.1"
+  }
+}

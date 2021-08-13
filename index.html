@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+
+        <title>Micro-frontends - a journey</title>
+
+        <meta
+            name="description"
+            content="Presentation on Purplebricks journey through micro-frontend development"
+        />
+        <meta name="author" content="Hugh Loughrey & Ben Read" />
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta
+            name="apple-mobile-web-app-status-bar-style"
+            content="black-translucent"
+        />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="reveal.js/dist/reset.css" />
+        <link rel="stylesheet" href="reveal.js/dist/reveal.css" />
+        <link
+            rel="stylesheet"
+            href="reveal.js/dist/theme/serif.css"
+            id="theme"
+        />
+
+        <!-- Theme used for syntax highlighting of code -->
+        <link
+            rel="stylesheet"
+            href="reveal.js/plugin/highlight/monokai.css"
+            id="highlight-theme"
+        />
+        <link rel="stylesheet" href="styles.css" />
+    </head>
+
+    <body>
+        <div class="reveal">
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <a href="https://www.purplebricks.co.uk/">
+                        <img
+                            src="https://pbonlineassets.azureedge.net/web-images/marketing-global/logos/pb-logo-dark.svg"
+                            alt="Profile Picture"
+                            style="
+                                height: 180px;
+                                margin: 0 auto 4rem auto;
+                                background: transparent;
+                            "
+                            class="demo-logo"
+                        />
+                    </a>
+
+                    <h3>Micro-frontends - A Journey</h3>
+                </section>
+
+                <section>
+                    <h3>👋 Hello Everybody 👋</h3>
+                    <div class="profilesContainer">
+                        <a
+                            class="profileLinks"
+                            href="https://www.linkedin.com/in/hugh-loughrey-msc-a84ab84b/"
+                        >
+                            <img
+                                src="./assets/Hugh.png"
+                                alt="Hugh profile picture"
+                                class="profileImages"
+                            />
+                            Hugh Loughrey<br />
+                            Senior Engineer
+                        </a>
+                        <a
+                            href="https://www.linkedin.com/in/benjaminread1980/"
+                            class="profileLinks"
+                        >
+                            <img
+                                src="./assets/Ben.png"
+                                alt="Ben profile picture"
+                                class="profileImages"
+                            />
+                            Ben Read<br />
+                            Senior Engineer
+                        </a>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Content</h2>
+                    <ul></ul>
+                </section>
+
+                <section>
+                    <img
+                        class="monolith-tech-img"
+                        src="./assets/MonolithTech.png"
+                        alt="ASP .Net Logo"
+                        class="profileImages"
+                    />
+                </section>
+
+                <section>
+                    <img
+                        class="monolith-tech-img"
+                        src="./assets/Generation_1.png"
+                        alt="First generation of Mircro-frontend"
+                        class="profileImages"
+                    />
+                </section>
+
+                <section>
+                    <img
+                        class="monolith-tech-img"
+                        src="./assets/Generation_2.png"
+                        alt="Second generation of Mircro-frontend"
+                        class="profileImages"
+                    />
+                </section>
+
+                <section>
+                    <img
+                        class="monolith-tech-img"
+                        src="./assets/Generation_3.png"
+                        alt="Third generation of Mircro-frontend"
+                        class="profileImages"
+                    />
+                </section>
+
+                <section>
+                    <h2>Questions</h2>
+                    <img src="./assets/questions.png" alt="Question mark" />
+                </section>
+            </div>
+        </div>
+
+        <script src="reveal.js/dist/reveal.js"></script>
+        <script src="reveal.js/plugin/zoom/zoom.js"></script>
+        <script src="reveal.js/plugin/notes/notes.js"></script>
+        <script src="reveal.js/plugin/search/search.js"></script>
+        <script src="reveal.js/plugin/markdown/markdown.js"></script>
+        <script src="reveal.js/plugin/highlight/highlight.js"></script>
+        <script>
+            // Also available as an ES module, see:
+            // https://revealjs.com/initialization/
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                center: true,
+                hash: true,
+
+                // Learn about plugins: https://revealjs.com/plugins/
+                plugins: [
+                    RevealZoom,
+                    RevealNotes,
+                    RevealSearch,
+                    RevealMarkdown,
+                    RevealHighlight,
+                ],
+            });
+
+            Reveal.configure({ pdfSeparateFragments: false });
+        </script>
+    </body>
+</html>
