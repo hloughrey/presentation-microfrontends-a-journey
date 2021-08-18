@@ -88,7 +88,7 @@
                 </section>
 
                 <section>
-                    <h2>Content</h2>
+                    <h2>Agenda</h2>
                     <ul>
                         <li>Purplebricks frontend journey</li>
                         <li>Problems we were trying to solve</li>
@@ -98,39 +98,75 @@
                 </section>
 
                 <section>
-                    <img
-                        class="monolith-tech-img"
-                        src="./assets/MonolithTech.png"
-                        alt="ASP .Net Logo"
-                        class="profileImages"
-                    />
+                    <h2>2014 - 2017</h2>
+                    <div class="split-slide">
+                        <img
+                            class="history-image"
+                            src="./assets/MonolithTech.png"
+                            alt="ASP .Net Logo"
+                            class="profileImages"
+                        />
+                        <ul>
+                            <li>ASP .net monolith</li>
+                            <li>React monolith</li>
+                            <li class="fright">😥</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section>
-                    <img
-                        class="monolith-tech-img"
-                        src="./assets/Generation_1.png"
-                        alt="First generation of Mircro-frontend"
-                        class="profileImages"
-                    />
+                    <h2>2017 - 2019</h2>
+                    <div class="split-slide">
+                        <img
+                            class="history-image"
+                            src="./assets/Generation_1.png"
+                            alt="First generation of Mircro-frontend"
+                            class="profileImages"
+                        />
+                        <ul>
+                            <li>Micro-frontends</li>
+                            <li>Multiple repositories</li>
+                            <li>
+                                Custom <strong>React</strong> implementation
+                            </li>
+                            <li>Consistency & Standards</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section>
-                    <img
-                        class="monolith-tech-img"
-                        src="./assets/Generation_2.png"
-                        alt="Second generation of Mircro-frontend"
-                        class="profileImages"
-                    />
+                    <h2>2019 - 2020</h2>
+                    <div class="split-slide">
+                        <img
+                            class="history-image"
+                            src="./assets/Generation_2.png"
+                            alt="Second generation of Mircro-frontend"
+                            class="profileImages"
+                        />
+                        <ul>
+                            <li>MonoRepo</li>
+                            <li>Consistent pipelines</li>
+                            <li>Code sharing still an issue</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section>
-                    <img
-                        class="monolith-tech-img"
-                        src="./assets/Generation_3.png"
-                        alt="Third generation of Mircro-frontend"
-                        class="profileImages"
-                    />
+                    <h2>2020 - ...</h2>
+                    <div class="split-slide">
+                        <img
+                            class="history-image"
+                            src="./assets/Generation_3.png"
+                            alt="Third generation of Mircro-frontend"
+                            class="profileImages"
+                        />
+                        <ul>
+                            <li>Applications & Libraries</li>
+                            <li>Standardisation</li>
+                            <li>Full Stack</li>
+                            <li>Single CLI</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section>
@@ -183,28 +219,70 @@
                 </section>
 
                 <section>
-                    <h2>Deployments</h2>
-                    <ul>
-                        <li>Single pipeline for all apps</li>
-                        <li>
-                            <pre class="pre"><code
+                    <section>
+                        <h2>Deployments</h2>
+                        <ul>
+                            <li>Single pipeline for all apps</li>
+                            <li>
+                                <pre class="pre"><code
                                 class="bash"
                                 data-trim
                                 data-line-numbers
                             >
                             nx affected:apps
                             </code></pre>
-                        </li>
-                        <li>
-                            Unit & Shallow integration tests built into pipeline
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <pre class="pre"><code
+                            class="js"
+                            data-noescape
+                            data-trim
+                            data-line-numbers="1-15|17-33"
+                        >
+                        (function buildAffectedApplications() {
+                            const baseSha =
+                                process.env.BUILD_REASON.toLowerCase() === 'pullrequest'
+                                    ? 'origin/master'
+                                    : 'origin/master~1';
+
+                            const affectedApplications = getAffectedApplications(baseSha);
+
+                            checkForNoAffectedApplications(affectedApplications);
+                            buildApplications(baseSha);
+                            buildDistFolders(affectedApplications);
+
+                            const affectedApplicationsMatrix = applicationMatrix(affectedApplications);
+                            outputApplicationMatrix(affectedApplicationsMatrix);
+                        })();
+
+                        function getAffectedApplications(baseSha) {
+                            console.log('Checking which applications are affected');
+
+                            const affectedApplications = execSync(
+                                `npx nx affected:apps --base=${baseSha} --plain`
+                            )
+                                .toString()
+                                .trim()
+                                .split(' ');
+
+                            console.log(
+                                'The affected applications are: ',
+                                affectedApplications.join(', ')
+                            );
+
+                            return affectedApplications;
+                        }
+                        </code></pre>
+                    </section>
                 </section>
 
                 <section>
                     <h2>Versioning</h2>
                     <ul>
-                        <li>Single verion of library</li>
+                        <li>Single version of library</li>
                         <li>Keep all apps in sync</li>
                         <li>Less risk of unexpected breaking changes</li>
                         <li>No sprints wasted bumping library versions</li>
@@ -212,22 +290,34 @@
                 </section>
 
                 <section>
-                    <h2>Development experience</h2>
-                    <ul>
-                        <li>Circa 2-3 days to deploy new app to QA</li>
-                        <li>
-                            <pre class="pre"><code
-                            class="bash"
-                            data-trim
-                            data-line-numbers
-                        >
-                        nx g @nrwl/next:app becky-quotes && yarn generate
-                        </code></pre>
-                        </li>
-                        <li>Easy to onboard new colleagues</li>
-                        <li>100% unit code coverage</li>
-                        <li>Automated dependency management</li>
-                    </ul>
+                    <section>
+                        <h2>Development experience</h2>
+                        <ul>
+                            <li>Circa 2-3 days to deploy new app to QA</li>
+                            <li>
+                                <pre class="pre"><code
+                                    class="bash"
+                                    data-trim
+                                    data-line-numbers
+                                    >
+                                    nx g @nrwl/next:app becky-quotes && yarn generate
+                                </code></pre>
+                            </li>
+                            <li>Easy to onboard new colleagues</li>
+                            <li>Automated dependency management</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h2 class="dependency-management-heading">
+                            Dependency Management
+                        </h2>
+                        <ul>
+                            <li>Renovate</li>
+                            <li>Raises PRs nightly</li>
+                            <li>100% unit code coverage</li>
+                        </ul>
+                    </section>
                 </section>
 
                 <section>
@@ -235,32 +325,47 @@
                     <ul>
                         <li>Library structure & size</li>
                         <li>Build times</li>
-                        <li>Deployment options</li>
                     </ul>
                 </section>
 
                 <section>
                     <h2>Dependency Graph</h2>
-                    <img
-                        src="./assets/dependency-graph.png"
-                        alt="Nx logo"
-                        class="monolith-tech-img"
-                    />
-                </section>
-
-                <section>
-                    <h2>Server / Client / Static</h2>
-                    <li>Deploy to docker container within K8 cluster</li>
-                    <li>Client side render?</li>
-                    <li>Static generation with caching?</li>
+                    <div class="split-slide">
+                        <video controls autoplay class="dependency-graph-video">
+                            <source
+                                src="./assets/DependencyGraph.mov"
+                                type="video/mp4"
+                            />
+                        </video>
+                        <ul class="dependency-graph-points">
+                            <li>Nx knows what apps depend on what libraries</li>
+                            <li>
+                                <pre class="pre"><code
+                                class="bash"
+                                data-trim
+                                data-line-numbers
+                            >
+                            nx affected:...
+                            </code></pre>
+                            </li>
+                            <li>
+                                <a
+                                    href="https://nx.dev/latest/angular/structure/creating-libraries"
+                                    target="_blank"
+                                    >Library strategy</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
                 </section>
 
                 <section>
                     <h2>Summary</h2>
                     <ul>
                         <li>Really happy with Nx 🎉</li>
-                        <li>We need to fix out dependency graph</li>
-                        <li>We want to offer more deployment options</li>
+                        <li>Library strategy is <strong>important</strong></li>
+                        <li>Nx supports full stack applications</li>
+                        <li>Tonnes of Plugins</li>
                     </ul>
                 </section>
 

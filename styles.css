@@ -18,9 +18,39 @@
     margin: 0 1rem 0 0;
 }
 
-.monolith-tech-img {
-    width: 80%;
+.split-slide {
+    display: flex;
+}
+
+.history-image {
+    width: 50%;
     height: auto;
+    margin-right: 2rem !important;
+}
+
+.fright {
+    list-style: none;
+    text-align: center;
+    font-size: 4rem;
+}
+
+.nx-logo-point {
+    width: 5rem;
+    margin: 0;
+}
+
+.dependency-management-heading {
+    font-size: 4rem !important;
+}
+
+.dependency-graph-video {
+    width: 50%;
+    height: auto;
+    margin-right: 2rem !important;
+}
+
+.dependency-graph-points {
+    width: 50%;
 }
 
 .nx-slide {
